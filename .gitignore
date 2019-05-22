@@ -32,5 +32,8 @@
 *.app
 
 # Borland Files
-
 *.tds
+
+# Source files
+*.svg
+*.wmf
