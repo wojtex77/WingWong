@@ -16,7 +16,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::timerPaddleLeftDownTimer(TObject *Sender)
 {
-        if ((paddleLeft->Top+60)<(table->Top+table->Height)) paddleLeft->Top += 5;
+        if ((paddleLeft->Top+62)<(table->Top+table->Height)) paddleLeft->Top += 5;
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::timerPaddleLeftUpTimer(TObject *Sender)
@@ -49,10 +49,22 @@ void __fastcall TMainForm::FormKeyUp(TObject *Sender, WORD &Key,
 
 void __fastcall TMainForm::timerPaddleRightDownTimer(TObject *Sender)
 {
-        if ((paddleRight->Top+60)<(table->Top+table->Height)) paddleRight->Top += 5;
+        if ((paddleRight->Top+62)<(table->Top+table->Height)) paddleRight->Top += 5;
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::timerPaddleRightUpTimer(TObject *Sender)
 {
         if ((paddleRight->Top-2)>table->Top) paddleRight->Top -= 5;
 }
+void __fastcall TMainForm::FormCreate(TObject *Sender)
+{
+        //left paddle initial positioning
+        paddleLeft->Left=((MainForm->ClientWidth/2)-300-(paddleLeft->Width)/2);
+        paddleLeft->Top=(table->Top+(table->Height/2)-(paddleLeft->Height/2));
+
+        //right paddle initial positioning
+        paddleRight->Left=((MainForm->ClientWidth/2)+300-(paddleRight->Width)/2);
+        paddleRight->Top=paddleLeft->Top;
+}
+//---------------------------------------------------------------------------
+

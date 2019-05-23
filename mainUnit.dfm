@@ -1,19 +1,18 @@
 object MainForm: TMainForm
-  Left = 256
-  Top = 264
-  Align = alClient
+  Left = 654
+  Top = 220
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderWidth = 10
   Caption = 'WingWong'
-  ClientHeight = 441
-  ClientWidth = 714
+  ClientHeight = 741
+  ClientWidth = 764
   Color = clWhite
-  Constraints.MaxHeight = 500
-  Constraints.MaxWidth = 750
-  Constraints.MinHeight = 500
-  Constraints.MinWidth = 750
+  Constraints.MaxHeight = 800
+  Constraints.MaxWidth = 800
+  Constraints.MinHeight = 800
+  Constraints.MinWidth = 800
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -27,10 +26,10 @@ object MainForm: TMainForm
   TextHeight = 13
   object table: TImage
     Left = 0
-    Top = 60
-    Width = 714
-    Height = 381
-    Align = alBottom
+    Top = 0
+    Width = 764
+    Height = 741
+    Align = alClient
     AutoSize = True
     Center = True
     Picture.Data = {
@@ -32662,15 +32661,15 @@ object MainForm: TMainForm
       51FFFF7E51FFFF7E51FFFF7E51FFFF9070FF}
   end
   object paddleLeft: TShape
-    Left = 62
-    Top = 208
+    Left = 134
+    Top = 336
     Width = 6
     Height = 60
     Brush.Color = clBlack
   end
   object paddleRight: TShape
-    Left = 645
-    Top = 184
+    Left = 613
+    Top = 328
     Width = 6
     Height = 60
     Brush.Color = clRed
@@ -32680,28 +32679,28 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftDownTimer
-    Left = 280
-    Top = 280
+    Left = 296
+    Top = 192
   end
   object timerPaddleLeftUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftUpTimer
-    Left = 232
-    Top = 184
+    Left = 296
+    Top = 136
   end
   object timerPaddleRightDown: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightDownTimer
-    Left = 488
-    Top = 288
+    Left = 480
+    Top = 192
   end
   object timerPaddleRightUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightUpTimer
     Left = 480
-    Top = 192
+    Top = 136
   end
 end
