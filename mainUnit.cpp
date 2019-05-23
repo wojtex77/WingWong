@@ -29,16 +29,30 @@ void __fastcall TMainForm::timerPaddleLeftUpTimer(TObject *Sender)
 void __fastcall TMainForm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-        if (Key == VK_UP) timerPaddleLeftUp->Enabled=true;
-        if (Key == VK_DOWN) timerPaddleLeftDown->Enabled=true;
+        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=true;
+        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=true;
+        if (Key == VK_UP ) timerPaddleRightUp->Enabled=true;
+        if (Key == VK_DOWN ) timerPaddleRightDown->Enabled=true;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TMainForm::FormKeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-        if (Key == VK_UP) timerPaddleLeftUp->Enabled=false;
-        if (Key == VK_DOWN) timerPaddleLeftDown->Enabled=false;
+        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=false;
+        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=false;
+        if (Key == VK_UP ) timerPaddleRightUp->Enabled=false;
+        if (Key == VK_DOWN ) timerPaddleRightDown->Enabled=false;
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TMainForm::timerPaddleRightDownTimer(TObject *Sender)
+{
+        if ((paddleRight->Top+60)<(table->Top+table->Height)) paddleRight->Top += 5;
+}
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::timerPaddleRightUpTimer(TObject *Sender)
+{
+        if ((paddleRight->Top-2)>table->Top) paddleRight->Top -= 5;
+}

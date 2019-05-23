@@ -16,12 +16,12 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::timerPaddleLeftDownTimer(TObject *Sender)
 {
-        paddleLeft->Top += 2;
+        if ((paddleLeft->Top+60)<(table->Top+table->Height)) paddleLeft->Top += 5;
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::timerPaddleLeftUpTimer(TObject *Sender)
 {
-        paddleLeft->Top -= 2;
+        if ((paddleLeft->Top-2)>table->Top) paddleLeft->Top -= 5;
 }
 //---------------------------------------------------------------------------
 
