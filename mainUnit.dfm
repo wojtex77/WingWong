@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 668
-  Top = 323
+  Left = 256
+  Top = 264
   Align = alClient
   AutoScroll = False
   AutoSize = True
@@ -20,15 +20,18 @@ object MainForm: TMainForm
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object table: TImage
-    Left = 13
-    Top = 47
-    Width = 688
+    Left = 0
+    Top = 60
+    Width = 714
     Height = 381
+    Align = alBottom
+    AutoSize = True
     Center = True
     Picture.Data = {
       07544269746D617026EE0F00424D26EE0F00000000004200000028000000AD02
@@ -32659,15 +32662,15 @@ object MainForm: TMainForm
       51FFFF7E51FFFF7E51FFFF7E51FFFF9070FF}
   end
   object paddleLeft: TShape
-    Left = 30
+    Left = 62
     Top = 208
     Width = 6
     Height = 60
     Brush.Color = clBlack
   end
   object paddleRight: TShape
-    Left = 677
-    Top = 208
+    Left = 645
+    Top = 184
     Width = 6
     Height = 60
     Brush.Color = clRed
@@ -32677,28 +32680,28 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftDownTimer
-    Left = 24
-    Top = 16
+    Left = 280
+    Top = 280
   end
   object timerPaddleLeftUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftUpTimer
-    Left = 64
-    Top = 16
+    Left = 232
+    Top = 184
   end
   object timerPaddleRightDown: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightDownTimer
-    Left = 696
-    Top = 8
+    Left = 488
+    Top = 288
   end
   object timerPaddleRightUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightUpTimer
-    Left = 656
-    Top = 8
+    Left = 480
+    Top = 192
   end
 end
