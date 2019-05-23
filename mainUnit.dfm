@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 608
-  Top = 389
-  Align = alCustom
+  Left = 957
+  Top = 421
+  Align = alClient
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -20,9 +20,11 @@ object MainForm: TMainForm
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
-  object Image1: TImage
+  object table: TImage
     Left = 13
     Top = 47
     Width = 688
@@ -32655,5 +32657,26 @@ object MainForm: TMainForm
       51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E
       51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E51FFFF7E
       51FFFF7E51FFFF7E51FFFF7E51FFFF9070FF}
+  end
+  object paddleLeft: TShape
+    Left = 30
+    Top = 208
+    Width = 6
+    Height = 60
+    Brush.Color = clBlack
+  end
+  object timerPaddleLeftDown: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = timerPaddleLeftDownTimer
+    Left = 24
+    Top = 16
+  end
+  object timerPaddleLeftUp: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = timerPaddleLeftUpTimer
+    Left = 64
+    Top = 16
   end
 end
