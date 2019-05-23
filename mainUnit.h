@@ -13,7 +13,9 @@
 class TMainForm : public TForm
 {
 __published:	// IDE-managed Components
-        TImage *Image1;
+        TImage *table;
+        TShape *paddleLeft;
+        TTimer *timerPaddleLeft;
 private:	// User declarations
 public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);
