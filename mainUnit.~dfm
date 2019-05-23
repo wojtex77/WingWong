@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 606
-  Top = 289
+  Left = 957
+  Top = 421
   Align = alClient
   AutoScroll = False
   AutoSize = True
@@ -20,6 +20,8 @@ object MainForm: TMainForm
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object table: TImage
@@ -32663,9 +32665,18 @@ object MainForm: TMainForm
     Height = 60
     Brush.Color = clBlack
   end
-  object timerPaddleLeft: TTimer
+  object timerPaddleLeftDown: TTimer
+    Enabled = False
     Interval = 15
+    OnTimer = timerPaddleLeftDownTimer
     Left = 24
-    Top = 8
+    Top = 16
+  end
+  object timerPaddleLeftUp: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = timerPaddleLeftUpTimer
+    Left = 64
+    Top = 16
   end
 end
