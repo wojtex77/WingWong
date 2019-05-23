@@ -1,13 +1,15 @@
 object MainForm: TMainForm
   Left = 375
   Top = 201
-  Align = alBottom
+  Align = alCustom
   AutoScroll = False
+  AutoSize = True
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderWidth = 10
   Caption = 'WingWong'
   ClientHeight = 441
   ClientWidth = 714
-  Color = clBtnFace
+  Color = clWhite
   Constraints.MaxHeight = 500
   Constraints.MaxWidth = 750
   Constraints.MinHeight = 500

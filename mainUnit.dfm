@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 375
-  Top = 201
+  Left = 608
+  Top = 389
   Align = alCustom
   AutoScroll = False
   AutoSize = True
@@ -23,12 +23,10 @@ object MainForm: TMainForm
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
-    Left = 0
-    Top = 60
-    Width = 714
+    Left = 13
+    Top = 47
+    Width = 688
     Height = 381
-    Align = alBottom
-    AutoSize = True
     Center = True
     Picture.Data = {
       07544269746D617026EE0F00424D26EE0F00000000004200000028000000AD02
