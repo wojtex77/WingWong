@@ -17,8 +17,13 @@ __published:	// IDE-managed Components
         TShape *paddleLeft;
         TTimer *timerPaddleLeftDown;
         TTimer *timerPaddleLeftUp;
+        TTimer *timerPaddleRightDown;
+        TTimer *timerPaddleRightUp;
+        TShape *paddleRight;
         void __fastcall timerPaddleLeftDownTimer(TObject *Sender);
         void __fastcall timerPaddleLeftUpTimer(TObject *Sender);
+        void __fastcall timerPaddleRightDownTimer(TObject *Sender);
+        void __fastcall timerPaddleRightUpTimer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
         void __fastcall FormKeyUp(TObject *Sender, WORD &Key,

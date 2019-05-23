@@ -29,8 +29,8 @@ void __fastcall TMainForm::timerPaddleLeftUpTimer(TObject *Sender)
 void __fastcall TMainForm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=true;
-        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=true;
+        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=true; //a key
+        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=true; //z key
         if (Key == VK_UP ) timerPaddleRightUp->Enabled=true;
         if (Key == VK_DOWN ) timerPaddleRightDown->Enabled=true;
 }
@@ -39,8 +39,8 @@ void __fastcall TMainForm::FormKeyDown(TObject *Sender, WORD &Key,
 void __fastcall TMainForm::FormKeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=false;
-        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=false;
+        if (Key == 0x41 ) timerPaddleLeftUp->Enabled=false; //a key
+        if (Key == 0x5A ) timerPaddleLeftDown->Enabled=false; //z key
         if (Key == VK_UP ) timerPaddleRightUp->Enabled=false;
         if (Key == VK_DOWN ) timerPaddleRightDown->Enabled=false;
 }

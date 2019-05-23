@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 957
-  Top = 421
+  Left = 668
+  Top = 323
   Align = alClient
   AutoScroll = False
   AutoSize = True
@@ -32665,6 +32665,14 @@ object MainForm: TMainForm
     Height = 60
     Brush.Color = clBlack
   end
+  object paddleRight: TShape
+    Left = 677
+    Top = 208
+    Width = 6
+    Height = 60
+    Brush.Color = clRed
+    Pen.Color = clRed
+  end
   object timerPaddleLeftDown: TTimer
     Enabled = False
     Interval = 15
@@ -32678,5 +32686,19 @@ object MainForm: TMainForm
     OnTimer = timerPaddleLeftUpTimer
     Left = 64
     Top = 16
+  end
+  object timerPaddleRightDown: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = timerPaddleRightDownTimer
+    Left = 696
+    Top = 8
+  end
+  object timerPaddleRightUp: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = timerPaddleRightUpTimer
+    Left = 656
+    Top = 8
   end
 end
