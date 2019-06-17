@@ -9,7 +9,7 @@
 #pragma resource "*.dfm"
 TMainForm *MainForm;
 
-int xBallVelocity=8;
+int xBallVelocity=6;
         int yBallVelocity=1;
         int *xBallVelocityPointer=&xBallVelocity;
         int *yBallVelocityPointer=&yBallVelocity;
@@ -90,14 +90,18 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         //rightPaddle bounce condition
         if (
         ((ball->Left+ball->Width)>=paddleRight->Left)&&
-        ((ball->Top-(ball->Height/2))>=paddleRight->Top)&&
-        ((ball->Top+(ball->Height/2))<=(paddleRight->Top+paddleRight->Height))
-                                                        ){
-                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
-                }
+        ((ball->Top+(ball->Height/2))>paddleRight->Top) &&
+        ((ball->Top-(ball->Height/2))<(paddleRight->Top+paddleRight->Height)))
+
+                                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
+
         //leftPaddle bounce condition
-        if (ball->Left<=(paddleLeft->Left+paddleLeft->Width))
-                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
+        if (
+        ((ball->Left<=(paddleLeft->Left+paddleLeft->Width)))&&
+        ((ball->Top+(ball->Height/2))>paddleLeft->Top) &&
+        ((ball->Top-(ball->Height/2))<(paddleLeft->Top+paddleLeft->Height)))
+
+                                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
 
         //top table band bounce condition
         if (ball->Top<=(table->Top))
@@ -107,8 +111,14 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         if ((ball->Top+ball->Height)>=((table->Top+table->Height)))
                 *yBallVelocityPointer=*yBallVelocityPointer*(-1);
 
+        //right paddle loose condition
+        if (ball->Left>=(paddleRight->Left+paddleRight->Width+10))
+                FormCreate(Sender);
 
 
+        //left paddle loose condition
+        if (ball->Left<=(paddleLeft->Left-(10+ball->Width)))
+                FormCreate(Sender);
 
 }
 //---------------------------------------------------------------------------
