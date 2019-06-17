@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 388
-  Top = 40
+  Left = 308
+  Top = 74
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -28,8 +28,8 @@ object MainForm: TMainForm
     Left = 0
     Top = 0
     Width = 764
-    Height = 741
-    Align = alClient
+    Height = 381
+    Align = alTop
     AutoSize = True
     Center = True
     Picture.Data = {
@@ -32744,6 +32744,8 @@ object MainForm: TMainForm
     Top = 136
   end
   object timerBall: TTimer
+    Interval = 2
+    OnTimer = timerBallTimer
     Left = 384
     Top = 160
   end
