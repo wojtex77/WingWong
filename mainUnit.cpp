@@ -65,6 +65,12 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
         //right paddle initial positioning
         paddleRight->Left=((MainForm->ClientWidth/2)+300-(paddleRight->Width)/2);
         paddleRight->Top=paddleLeft->Top;
+
+        //ball initial positioning
+        ball->Left=(paddleLeft->Left+paddleLeft->Width+2);
+        ball->Top=(paddleLeft->Top+(paddleLeft->Height/2)-(ball->Height/2));
+
 }
 //---------------------------------------------------------------------------
+
 

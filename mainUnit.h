@@ -20,6 +20,8 @@ __published:	// IDE-managed Components
         TTimer *timerPaddleRightDown;
         TTimer *timerPaddleRightUp;
         TShape *paddleRight;
+        TImage *ball;
+        TTimer *timerBall;
         void __fastcall timerPaddleLeftDownTimer(TObject *Sender);
         void __fastcall timerPaddleLeftUpTimer(TObject *Sender);
         void __fastcall timerPaddleRightDownTimer(TObject *Sender);
