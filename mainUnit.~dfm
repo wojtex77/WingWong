@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 388
-  Top = 40
+  Left = 308
+  Top = 74
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -28,8 +28,8 @@ object MainForm: TMainForm
     Left = 0
     Top = 0
     Width = 764
-    Height = 741
-    Align = alClient
+    Height = 381
+    Align = alTop
     AutoSize = True
     Center = True
     Picture.Data = {
@@ -32661,23 +32661,23 @@ object MainForm: TMainForm
       51FFFF7E51FFFF7E51FFFF7E51FFFF9070FF}
   end
   object paddleLeft: TShape
-    Left = 134
-    Top = 336
+    Left = 78
+    Top = 96
     Width = 6
     Height = 60
     Brush.Color = clBlack
   end
   object paddleRight: TShape
-    Left = 613
-    Top = 328
+    Left = 653
+    Top = 104
     Width = 6
     Height = 60
     Brush.Color = clRed
     Pen.Color = clRed
   end
   object ball: TImage
-    Left = 160
-    Top = 352
+    Left = 152
+    Top = 160
     Width = 15
     Height = 15
     AutoSize = True
@@ -32719,34 +32719,34 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftDownTimer
-    Left = 296
-    Top = 192
+    Left = 272
+    Top = 96
   end
   object timerPaddleLeftUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleLeftUpTimer
-    Left = 296
-    Top = 136
+    Left = 272
+    Top = 40
   end
   object timerPaddleRightDown: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightDownTimer
-    Left = 480
-    Top = 192
+    Left = 472
+    Top = 96
   end
   object timerPaddleRightUp: TTimer
     Enabled = False
     Interval = 15
     OnTimer = timerPaddleRightUpTimer
-    Left = 480
-    Top = 136
+    Left = 472
+    Top = 32
   end
   object timerBall: TTimer
     Interval = 2
     OnTimer = timerBallTimer
-    Left = 384
-    Top = 160
+    Left = 368
+    Top = 16
   end
 end

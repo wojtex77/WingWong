@@ -88,7 +88,11 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         ball->Top+=*yBallVelocityPointer;
 
         //rightPaddle bounce condition
-        if ((ball->Left+ball->Width)>=paddleRight->Left){
+        if (
+        ((ball->Left+ball->Width)>=paddleRight->Left)&&
+        ((ball->Top-(ball->Height/2))>=paddleRight->Top)&&
+        ((ball->Top+(ball->Height/2))<=(paddleRight->Top+paddleRight->Height))
+                                                        ){
                 *xBallVelocityPointer=*xBallVelocityPointer*(-1);
                 }
         //leftPaddle bounce condition
