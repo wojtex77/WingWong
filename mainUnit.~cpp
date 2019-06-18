@@ -129,9 +129,11 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
 
 
         //left paddle loose condition
-        if (ball->Left<=(paddleLeft->Left-30))
+        if (ball->Left<=(paddleLeft->Left-30)){
+                redResult++;
+                resultRed->Caption=redResult;
                 FormCreate(Sender);
-
+                }
 }
 //---------------------------------------------------------------------------
 

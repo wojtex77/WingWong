@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 202
-  Top = 174
+  Left = 131
+  Top = 139
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -32783,6 +32783,24 @@ object MainForm: TMainForm
       Font.Style = []
       ParentFont = False
     end
+  end
+  object resetButton: TButton
+    Left = 0
+    Top = 392
+    Width = 200
+    Height = 41
+    Caption = 'Od nowa'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 2
+    TabStop = False
+    OnClick = startButtonClick
   end
   object timerPaddleLeftDown: TTimer
     Enabled = False

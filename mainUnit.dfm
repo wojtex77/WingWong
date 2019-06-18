@@ -32784,6 +32784,26 @@ object MainForm: TMainForm
       ParentFont = False
     end
   end
+  object resetButton: TButton
+    Left = 0
+    Top = 392
+    Width = 200
+    Height = 41
+    Caption = 'Od nowa'
+    Enabled = False
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 2
+    TabStop = False
+    Visible = False
+    OnClick = resetButtonClick
+  end
   object timerPaddleLeftDown: TTimer
     Enabled = False
     Interval = 15

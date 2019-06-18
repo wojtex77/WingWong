@@ -125,6 +125,8 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 blackResult++;
                 resultBlack->Caption=blackResult;
                 FormCreate(Sender);
+                resetButton->Visible=true;
+                resetButton->Enabled=true;
                 }
 
 
@@ -133,6 +135,8 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 redResult++;
                 resultRed->Caption=redResult;
                 FormCreate(Sender);
+                resetButton->Visible=true;
+                resetButton->Enabled=true;
                 }
 }
 //---------------------------------------------------------------------------
@@ -142,6 +146,16 @@ void __fastcall TMainForm::startButtonClick(TObject *Sender)
         timerBall->Enabled=true;
         startButton->Visible=false;
         startButton->Enabled=false;
+        resetButton->Visible=false;
+        resetButton->Enabled=false;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::resetButtonClick(TObject *Sender)
+{
+        resultBlack->Caption=0;
+        resultRed->Caption=0;
 }
 //---------------------------------------------------------------------------
 
