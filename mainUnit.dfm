@@ -1,18 +1,20 @@
 object MainForm: TMainForm
-  Left = 308
-  Top = 74
+  Left = 207
+  Top = 143
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderWidth = 10
+  BorderWidth = 30
   Caption = 'WingWong'
-  ClientHeight = 741
-  ClientWidth = 764
-  Color = clWhite
-  Constraints.MaxHeight = 800
+  ClientHeight = 601
+  ClientWidth = 724
+  Color = clGray
+  Constraints.MaxHeight = 700
   Constraints.MaxWidth = 800
-  Constraints.MinHeight = 800
+  Constraints.MinHeight = 700
   Constraints.MinWidth = 800
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -22,12 +24,12 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
-  PixelsPerInch = 96
+  PixelsPerInch = 150
   TextHeight = 13
   object table: TImage
     Left = 0
     Top = 0
-    Width = 764
+    Width = 724
     Height = 381
     Align = alTop
     AutoSize = True
@@ -32661,22 +32663,22 @@ object MainForm: TMainForm
       51FFFF7E51FFFF7E51FFFF7E51FFFF9070FF}
   end
   object paddleLeft: TShape
-    Left = 78
+    Left = 94
     Top = 96
-    Width = 6
+    Width = 12
     Height = 60
     Brush.Color = clBlack
   end
   object paddleRight: TShape
-    Left = 653
+    Left = 669
     Top = 104
-    Width = 6
+    Width = 12
     Height = 60
     Brush.Color = clRed
     Pen.Color = clRed
   end
   object ball: TImage
-    Left = 152
+    Left = 168
     Top = 160
     Width = 15
     Height = 15
@@ -32715,6 +32717,109 @@ object MainForm: TMainForm
       B75980808002000000000000000000000000}
     Transparent = True
   end
+  object startButton: TButton
+    Left = 280
+    Top = 392
+    Width = 200
+    Height = 41
+    Caption = 'Pi'#322'ka w ruch!!!'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 0
+    TabStop = False
+    OnClick = startButtonClick
+  end
+  object infoPanel: TPanel
+    Left = 0
+    Top = 448
+    Width = 724
+    Height = 153
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clSilver
+    TabOrder = 1
+    object resultBlack: TLabel
+      Left = 312
+      Top = 0
+      Width = 25
+      Height = 46
+      Caption = '0'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -35
+      Font.Name = 'MV Boli'
+      Font.Style = []
+      ParentFont = False
+    end
+    object resultRed: TLabel
+      Left = 392
+      Top = 0
+      Width = 25
+      Height = 46
+      Caption = '0'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -35
+      Font.Name = 'MV Boli'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 360
+      Top = 0
+      Width = 13
+      Height = 46
+      Caption = ':'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -35
+      Font.Name = 'MV Boli'
+      Font.Style = []
+      ParentFont = False
+    end
+    object result: TLabel
+      Left = 0
+      Top = 107
+      Width = 724
+      Height = 46
+      Align = alBottom
+      Alignment = taCenter
+      Caption = 'wynik'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -35
+      Font.Name = 'MV Boli'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+  end
+  object resetButton: TButton
+    Left = 0
+    Top = 392
+    Width = 200
+    Height = 41
+    Caption = 'Od nowa'
+    Enabled = False
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 2
+    TabStop = False
+    Visible = False
+    OnClick = resetButtonClick
+  end
   object timerPaddleLeftDown: TTimer
     Enabled = False
     Interval = 15
@@ -32744,7 +32849,7 @@ object MainForm: TMainForm
     Top = 32
   end
   object timerBall: TTimer
-    Interval = 1
+    Interval = 10
     OnTimer = timerBallTimer
     Left = 368
     Top = 16

@@ -10,9 +10,16 @@
 TMainForm *MainForm;
 
 int xBallVelocity=6;
-        int yBallVelocity=1;
-        int *xBallVelocityPointer=&xBallVelocity;
-        int *yBallVelocityPointer=&yBallVelocity;
+int yBallVelocity=3;
+int *xBallVelocityPointer=&xBallVelocity;
+int *yBallVelocityPointer=&yBallVelocity;
+int blackResult=0;
+int redResult=0;
+
+bool checkGameEnd (int redScore, int blackScore){
+        if (redScore==5 || blackScore==5) return true;
+        else return false;
+}
 
 //---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner)
@@ -76,6 +83,16 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
         ball->Left=(paddleLeft->Left+paddleLeft->Width+2);
         ball->Top=(paddleLeft->Top+(paddleLeft->Height/2)-(ball->Height/2));
 
+        //button START
+        timerBall->Enabled=false;
+        startButton->Visible=true;
+        startButton->Enabled=true;
+
+        //result label
+        result->Visible=false;
+
+
+
 
 }
 //---------------------------------------------------------------------------
@@ -112,14 +129,55 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 *yBallVelocityPointer=*yBallVelocityPointer*(-1);
 
         //right paddle loose condition
-        if (ball->Left>=(paddleRight->Left+paddleRight->Width+10))
+        if (ball->Left>=(paddleRight->Left+30)){
+                blackResult++;
+                resultBlack->Caption=blackResult;
                 FormCreate(Sender);
+                resetButton->Visible=true;
+                resetButton->Enabled=true;
+                if (checkGameEnd(redResult, blackResult)==true) {
+                        result->Caption="CZARNY WYGRYWA!";
+                        result->Visible=true;
+                        startButton->Enabled=false;
+                        }
+                }
 
 
         //left paddle loose condition
-        if (ball->Left<=(paddleLeft->Left-(10+ball->Width)))
+        if (ball->Left<=(paddleLeft->Left-30)){
+                redResult++;
+                resultRed->Caption=redResult;
                 FormCreate(Sender);
+                resetButton->Visible=true;
+                resetButton->Enabled=true;
+                if (checkGameEnd(redResult, blackResult)==true) {
+                        result->Caption="CZERWONY WYGRYWA!";
+                        result->Visible=true;
+                        startButton->Enabled=false;
+                        }
+                }
+}
+//---------------------------------------------------------------------------
 
+void __fastcall TMainForm::startButtonClick(TObject *Sender)
+{
+        timerBall->Enabled=true;
+        startButton->Visible=false;
+        startButton->Enabled=false;
+        resetButton->Visible=false;
+        resetButton->Enabled=false;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::resetButtonClick(TObject *Sender)
+{
+        blackResult=0;
+        redResult=0;
+        resultBlack->Caption=blackResult;
+        resultRed->Caption=redResult;
+        startButton->Enabled=true;
+        result->Visible=false;
 }
 //---------------------------------------------------------------------------
 
