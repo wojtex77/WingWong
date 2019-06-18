@@ -32849,7 +32849,7 @@ object MainForm: TMainForm
     Top = 32
   end
   object timerBall: TTimer
-    Interval = 1
+    Interval = 10
     OnTimer = timerBallTimer
     Left = 368
     Top = 16
