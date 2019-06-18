@@ -29,6 +29,7 @@ __published:	// IDE-managed Components
         TLabel *Label1;
         TButton *resetButton;
         TLabel *result;
+        TButton *settingsButton;
         void __fastcall timerPaddleLeftDownTimer(TObject *Sender);
         void __fastcall timerPaddleLeftUpTimer(TObject *Sender);
         void __fastcall timerPaddleRightDownTimer(TObject *Sender);

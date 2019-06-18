@@ -24,7 +24,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
-  PixelsPerInch = 150
+  PixelsPerInch = 96
   TextHeight = 13
   object table: TImage
     Left = 0
@@ -32819,6 +32819,25 @@ object MainForm: TMainForm
     TabStop = False
     Visible = False
     OnClick = resetButtonClick
+  end
+  object settingsButton: TButton
+    Left = 520
+    Top = 392
+    Width = 209
+    Height = 41
+    Caption = 'Ustawienia'
+    Enabled = False
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 3
+    TabStop = False
+    Visible = False
   end
   object timerPaddleLeftDown: TTimer
     Enabled = False
