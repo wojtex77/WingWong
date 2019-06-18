@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 131
-  Top = 139
+  Left = 207
+  Top = 143
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -32783,6 +32783,22 @@ object MainForm: TMainForm
       Font.Style = []
       ParentFont = False
     end
+    object result: TLabel
+      Left = 0
+      Top = 107
+      Width = 724
+      Height = 46
+      Align = alBottom
+      Alignment = taCenter
+      Caption = 'wynik'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -35
+      Font.Name = 'MV Boli'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
   end
   object resetButton: TButton
     Left = 0
@@ -32833,7 +32849,7 @@ object MainForm: TMainForm
     Top = 32
   end
   object timerBall: TTimer
-    Interval = 1
+    Interval = 10
     OnTimer = timerBallTimer
     Left = 368
     Top = 16

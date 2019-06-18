@@ -10,11 +10,16 @@
 TMainForm *MainForm;
 
 int xBallVelocity=6;
-int yBallVelocity=1;
+int yBallVelocity=3;
 int *xBallVelocityPointer=&xBallVelocity;
 int *yBallVelocityPointer=&yBallVelocity;
 int blackResult=0;
 int redResult=0;
+
+bool checkGameEnd (int redScore, int blackScore){
+        if (redScore==5 || blackScore==5) return true;
+        else return false;
+}
 
 //---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner)
@@ -83,6 +88,9 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
         startButton->Visible=true;
         startButton->Enabled=true;
 
+        //result label
+        result->Visible=false;
+
 
 
 
@@ -127,6 +135,11 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 FormCreate(Sender);
                 resetButton->Visible=true;
                 resetButton->Enabled=true;
+                if (checkGameEnd(redResult, blackResult)==true) {
+                        result->Caption="CZARNY WYGRYWA!";
+                        result->Visible=true;
+                        startButton->Enabled=false;
+                        }
                 }
 
 
@@ -137,6 +150,11 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 FormCreate(Sender);
                 resetButton->Visible=true;
                 resetButton->Enabled=true;
+                if (checkGameEnd(redResult, blackResult)==true) {
+                        result->Caption="CZERWONY WYGRYWA!";
+                        result->Visible=true;
+                        startButton->Enabled=false;
+                        }
                 }
 }
 //---------------------------------------------------------------------------
@@ -154,8 +172,12 @@ void __fastcall TMainForm::startButtonClick(TObject *Sender)
 
 void __fastcall TMainForm::resetButtonClick(TObject *Sender)
 {
-        resultBlack->Caption=0;
-        resultRed->Caption=0;
+        blackResult=0;
+        redResult=0;
+        resultBlack->Caption=blackResult;
+        resultRed->Caption=redResult;
+        startButton->Enabled=true;
+        result->Visible=false;
 }
 //---------------------------------------------------------------------------
 
