@@ -1,13 +1,13 @@
 object MainForm: TMainForm
-  Left = 308
-  Top = 74
+  Left = 250
+  Top = 43
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderWidth = 10
+  BorderWidth = 30
   Caption = 'WingWong'
-  ClientHeight = 741
-  ClientWidth = 764
+  ClientHeight = 701
+  ClientWidth = 724
   Color = clWhite
   Constraints.MaxHeight = 800
   Constraints.MaxWidth = 800
@@ -27,7 +27,7 @@ object MainForm: TMainForm
   object table: TImage
     Left = 0
     Top = 0
-    Width = 764
+    Width = 724
     Height = 381
     Align = alTop
     AutoSize = True
@@ -32663,14 +32663,14 @@ object MainForm: TMainForm
   object paddleLeft: TShape
     Left = 78
     Top = 96
-    Width = 6
+    Width = 12
     Height = 60
     Brush.Color = clBlack
   end
   object paddleRight: TShape
     Left = 653
     Top = 104
-    Width = 6
+    Width = 12
     Height = 60
     Brush.Color = clRed
     Pen.Color = clRed

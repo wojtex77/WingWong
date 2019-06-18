@@ -112,12 +112,12 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
                 *yBallVelocityPointer=*yBallVelocityPointer*(-1);
 
         //right paddle loose condition
-        if (ball->Left>=(paddleRight->Left+paddleRight->Width+10))
+        if (ball->Left>=(paddleRight->Left+30))
                 FormCreate(Sender);
 
 
         //left paddle loose condition
-        if (ball->Left<=(paddleLeft->Left-(10+ball->Width)))
+        if (ball->Left<=(paddleLeft->Left-30))
                 FormCreate(Sender);
 
 }
