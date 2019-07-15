@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 207
-  Top = 143
+  Left = 406
+  Top = 170
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -32826,7 +32826,6 @@ object MainForm: TMainForm
     Width = 209
     Height = 41
     Caption = 'Ustawienia'
-    Enabled = False
     Font.Charset = EASTEUROPE_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -32837,6 +32836,7 @@ object MainForm: TMainForm
     ShowHint = False
     TabOrder = 3
     TabStop = False
+    OnClick = settingsButtonClick
   end
   object timerPaddleLeftDown: TTimer
     Enabled = False

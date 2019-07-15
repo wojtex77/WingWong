@@ -4,10 +4,10 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="WingWong.exe"/>
-    <OBJFILES value="WingWong.obj mainUnit.obj"/>
+    <OBJFILES value="WingWong.obj mainUnit.obj settingsUnit.obj"/>
     <RESFILES value="WingWong.res"/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) mainUnit.dfm"/>
+    <RESDEPEN value="$(RESFILES) mainUnit.dfm settingsUnit.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value=""/>
     <SPARELIBS value="vcl.lib rtl.lib"/>
@@ -46,6 +46,7 @@
       <FILE FILENAME="WingWong.res" FORMNAME="" UNITNAME="WingWong.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="WingWong.cpp" FORMNAME="" UNITNAME="WingWong" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="mainUnit.cpp" FORMNAME="MainForm" UNITNAME="mainUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="settingsUnit.cpp" FORMNAME="settingsForm" UNITNAME="settingsUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

@@ -32837,7 +32837,6 @@ object MainForm: TMainForm
     ShowHint = False
     TabOrder = 3
     TabStop = False
-    Visible = False
   end
   object timerPaddleLeftDown: TTimer
     Enabled = False

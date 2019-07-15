@@ -10,7 +10,7 @@
 TMainForm *MainForm;
 
 int xBallVelocity=6;
-int yBallVelocity=1;
+int yBallVelocity=3;
 int *xBallVelocityPointer=&xBallVelocity;
 int *yBallVelocityPointer=&yBallVelocity;
 int blackResult=0;

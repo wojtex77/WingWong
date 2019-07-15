@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "settingsUnit.h"
+#include "mainUnit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,3 +15,10 @@ __fastcall TsettingsForm::TsettingsForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TsettingsForm::applyButtonClick(TObject *Sender)
+{
+        MainForm->winingResult=winingScore->Text.ToInt();
+}
+//---------------------------------------------------------------------------
+

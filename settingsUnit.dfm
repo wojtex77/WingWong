@@ -1,6 +1,6 @@
 object settingsForm: TsettingsForm
-  Left = 776
-  Top = 272
+  Left = 768
+  Top = 320
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Ustawienia'
@@ -19,4 +19,25 @@ object settingsForm: TsettingsForm
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object winingScore: TLabeledEdit
+    Left = 88
+    Top = 8
+    Width = 49
+    Height = 21
+    EditLabel.Width = 71
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Do ilu punkt'#243'w'
+    LabelPosition = lpLeft
+    LabelSpacing = 3
+    TabOrder = 0
+  end
+  object applyButton: TButton
+    Left = 24
+    Top = 208
+    Width = 75
+    Height = 25
+    Caption = 'Zatwierd'#378
+    TabOrder = 1
+    OnClick = applyButtonClick
+  end
 end
