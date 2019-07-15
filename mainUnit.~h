@@ -9,6 +9,8 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+
+#include "settingsUnit.h"
 //---------------------------------------------------------------------------
 class TMainForm : public TForm
 {
@@ -42,9 +44,12 @@ __published:	// IDE-managed Components
         void __fastcall timerBallTimer(TObject *Sender);
         void __fastcall startButtonClick(TObject *Sender);
         void __fastcall resetButtonClick(TObject *Sender);
+        void __fastcall settingsButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);
+        int winingResult;
+        bool checkGameEnd (int redScore, int blackScore);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TMainForm *MainForm;

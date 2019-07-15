@@ -16,8 +16,9 @@ int *yBallVelocityPointer=&yBallVelocity;
 int blackResult=0;
 int redResult=0;
 
-bool checkGameEnd (int redScore, int blackScore){
-        if (redScore==5 || blackScore==5) return true;
+
+bool TMainForm::checkGameEnd (int redScore, int blackScore){
+        if (redScore==winingResult || blackScore==winingResult) return true;
         else return false;
 }
 
@@ -178,6 +179,13 @@ void __fastcall TMainForm::resetButtonClick(TObject *Sender)
         resultRed->Caption=redResult;
         startButton->Enabled=true;
         result->Visible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::settingsButtonClick(TObject *Sender)
+{
+        settingsForm->winingScore->Text=winingResult;
+        settingsForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 
