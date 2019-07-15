@@ -20,6 +20,7 @@ __published:	// IDE-managed Components
         TLabeledEdit *ballSpeed;
         void __fastcall applyButtonClick(TObject *Sender);
         void __fastcall discardButtonClick(TObject *Sender);
+        void __fastcall ballSpeedTrackBarChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TsettingsForm(TComponent* Owner);

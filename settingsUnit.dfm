@@ -55,14 +55,17 @@ object settingsForm: TsettingsForm
     Top = 40
     Width = 150
     Height = 45
+    Max = 5
+    Min = 1
     Orientation = trHorizontal
     Frequency = 1
-    Position = 0
+    Position = 2
     SelEnd = 0
     SelStart = 0
     TabOrder = 3
     TickMarks = tmBottomRight
     TickStyle = tsAuto
+    OnChange = ballSpeedTrackBarChange
   end
   object ballSpeed: TLabeledEdit
     Left = 88
@@ -74,6 +77,7 @@ object settingsForm: TsettingsForm
     EditLabel.Caption = 'Pr'#281'dko'#347#263' pi'#322'ki'
     LabelPosition = lpLeft
     LabelSpacing = 3
+    ReadOnly = True
     TabOrder = 4
   end
 end

@@ -48,7 +48,14 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);
+
         int winingResult;
+        int xBallVelocityPointer;
+        int yBallVelocityPointer;
+        int blackResult;
+        int redResult;
+
+
         bool checkGameEnd (int redScore, int blackScore);
         void resetPaddlesAndBallPositions ();
         void TMainForm::setButtonsConditions ();
