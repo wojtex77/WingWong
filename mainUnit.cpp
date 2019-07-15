@@ -16,9 +16,38 @@ int *yBallVelocityPointer=&yBallVelocity;
 int blackResult=0;
 int redResult=0;
 
-bool checkGameEnd (int redScore, int blackScore){
-        if (redScore==5 || blackScore==5) return true;
+
+bool TMainForm::checkGameEnd (int redScore, int blackScore){
+        if (redScore==winingResult || blackScore==winingResult) return true;
         else return false;
+}
+
+void TMainForm::resetPaddlesAndBallPositions (){
+        //left paddle initial positioning
+        paddleLeft->Left=((MainForm->ClientWidth/2)-300-(paddleLeft->Width)/2);
+        paddleLeft->Top=(table->Top+(table->Height/2)-(paddleLeft->Height/2));
+
+        //right paddle initial positioning
+        paddleRight->Left=((MainForm->ClientWidth/2)+300-(paddleRight->Width)/2);
+        paddleRight->Top=paddleLeft->Top;
+
+        //ball initial positioning
+        ball->Left=(paddleLeft->Left+paddleLeft->Width+2);
+        ball->Top=(paddleLeft->Top+(paddleLeft->Height/2)-(ball->Height/2));
+}
+
+void TMainForm::setButtonsConditions (){
+
+        //button START
+        startButton->Visible=true;
+        startButton->Enabled=true;
+
+        //result label
+        result->Visible=false;
+
+        //ball stoped
+        timerBall->Enabled=false;
+
 }
 
 //---------------------------------------------------------------------------
@@ -71,26 +100,12 @@ void __fastcall TMainForm::timerPaddleRightUpTimer(TObject *Sender)
 }
 void __fastcall TMainForm::FormCreate(TObject *Sender)
 {
-        //left paddle initial positioning
-        paddleLeft->Left=((MainForm->ClientWidth/2)-300-(paddleLeft->Width)/2);
-        paddleLeft->Top=(table->Top+(table->Height/2)-(paddleLeft->Height/2));
 
-        //right paddle initial positioning
-        paddleRight->Left=((MainForm->ClientWidth/2)+300-(paddleRight->Width)/2);
-        paddleRight->Top=paddleLeft->Top;
+        resetPaddlesAndBallPositions();
+        setButtonsConditions ();
+        winingResult=5;
 
-        //ball initial positioning
-        ball->Left=(paddleLeft->Left+paddleLeft->Width+2);
-        ball->Top=(paddleLeft->Top+(paddleLeft->Height/2)-(ball->Height/2));
-
-        //button START
-        timerBall->Enabled=false;
-        startButton->Visible=true;
-        startButton->Enabled=true;
-
-        //result label
-        result->Visible=false;
-
+        Application->MessageBox("Pokonaj swojego przeciwnika i zostañ mistrzem Wing-Wonga! \nDomyœlnie gra toczy siê do 5 wygranych.\nTe i inne parametry mo¿esz zmieniæ w ustawieniach.","Witaj przysz³y Wing-Wongisto!",MB_OK);
 
 
 
@@ -132,7 +147,8 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         if (ball->Left>=(paddleRight->Left+30)){
                 blackResult++;
                 resultBlack->Caption=blackResult;
-                FormCreate(Sender);
+                resetPaddlesAndBallPositions();
+                setButtonsConditions ();
                 resetButton->Visible=true;
                 resetButton->Enabled=true;
                 if (checkGameEnd(redResult, blackResult)==true) {
@@ -147,7 +163,8 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         if (ball->Left<=(paddleLeft->Left-30)){
                 redResult++;
                 resultRed->Caption=redResult;
-                FormCreate(Sender);
+                resetPaddlesAndBallPositions();
+                setButtonsConditions ();
                 resetButton->Visible=true;
                 resetButton->Enabled=true;
                 if (checkGameEnd(redResult, blackResult)==true) {
@@ -178,6 +195,13 @@ void __fastcall TMainForm::resetButtonClick(TObject *Sender)
         resultRed->Caption=redResult;
         startButton->Enabled=true;
         result->Visible=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::settingsButtonClick(TObject *Sender)
+{
+        settingsForm->winingScore->Text=winingResult;
+        settingsForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

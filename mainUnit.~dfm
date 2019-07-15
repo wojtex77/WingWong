@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 207
-  Top = 143
+  Left = 406
+  Top = 170
   AutoScroll = False
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -24,7 +24,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
-  PixelsPerInch = 150
+  PixelsPerInch = 96
   TextHeight = 13
   object table: TImage
     Left = 0
@@ -32820,6 +32820,24 @@ object MainForm: TMainForm
     Visible = False
     OnClick = resetButtonClick
   end
+  object settingsButton: TButton
+    Left = 520
+    Top = 392
+    Width = 209
+    Height = 41
+    Caption = 'Ustawienia'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 3
+    TabStop = False
+    OnClick = settingsButtonClick
+  end
   object timerPaddleLeftDown: TTimer
     Enabled = False
     Interval = 15
@@ -32849,7 +32867,7 @@ object MainForm: TMainForm
     Top = 32
   end
   object timerBall: TTimer
-    Interval = 1
+    Interval = 10
     OnTimer = timerBallTimer
     Left = 368
     Top = 16
