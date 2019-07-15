@@ -50,6 +50,8 @@ public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);
         int winingResult;
         bool checkGameEnd (int redScore, int blackScore);
+        void resetPaddlesAndBallPositions ();
+        void TMainForm::setButtonsConditions ();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TMainForm *MainForm;
