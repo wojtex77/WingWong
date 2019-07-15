@@ -3,9 +3,10 @@ object settingsForm: TsettingsForm
   Top = 320
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
+  BorderWidth = 20
   Caption = 'Ustawienia'
-  ClientHeight = 261
-  ClientWidth = 484
+  ClientHeight = 221
+  ClientWidth = 444
   Color = clBtnFace
   Constraints.MaxHeight = 300
   Constraints.MaxWidth = 500
@@ -33,11 +34,50 @@ object settingsForm: TsettingsForm
   end
   object applyButton: TButton
     Left = 24
-    Top = 208
+    Top = 160
     Width = 75
     Height = 25
     Caption = 'Zatwierd'#378
     TabOrder = 1
     OnClick = applyButtonClick
+  end
+  object discardButton: TButton
+    Left = 112
+    Top = 160
+    Width = 75
+    Height = 25
+    Caption = 'Anuluj'
+    TabOrder = 2
+    OnClick = discardButtonClick
+  end
+  object ballSpeedTrackBar: TTrackBar
+    Left = 152
+    Top = 40
+    Width = 150
+    Height = 45
+    Max = 5
+    Min = 1
+    Orientation = trHorizontal
+    Frequency = 1
+    Position = 2
+    SelEnd = 0
+    SelStart = 0
+    TabOrder = 3
+    TickMarks = tmBottomRight
+    TickStyle = tsAuto
+    OnChange = ballSpeedTrackBarChange
+  end
+  object ballSpeed: TLabeledEdit
+    Left = 88
+    Top = 40
+    Width = 49
+    Height = 21
+    EditLabel.Width = 68
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Pr'#281'dko'#347#263' pi'#322'ki'
+    LabelPosition = lpLeft
+    LabelSpacing = 3
+    ReadOnly = True
+    TabOrder = 4
   end
 end

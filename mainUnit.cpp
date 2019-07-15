@@ -9,12 +9,8 @@
 #pragma resource "*.dfm"
 TMainForm *MainForm;
 
-int xBallVelocity=6;
-int yBallVelocity=3;
-int *xBallVelocityPointer=&xBallVelocity;
-int *yBallVelocityPointer=&yBallVelocity;
-int blackResult=0;
-int redResult=0;
+
+
 
 
 bool TMainForm::checkGameEnd (int redScore, int blackScore){
@@ -104,6 +100,12 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
         resetPaddlesAndBallPositions();
         setButtonsConditions ();
         winingResult=5;
+        xBallVelocityPointer=4;
+        yBallVelocityPointer=2;
+        blackResult=0;
+        redResult=0;
+
+
 
         Application->MessageBox("Pokonaj swojego przeciwnika i zostañ mistrzem Wing-Wonga! \nDomyœlnie gra toczy siê do 5 wygranych.\nTe i inne parametry mo¿esz zmieniæ w ustawieniach.","Witaj przysz³y Wing-Wongisto!",MB_OK);
 
@@ -116,8 +118,8 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
 void __fastcall TMainForm::timerBallTimer(TObject *Sender)
 {
 
-        ball->Left+=*xBallVelocityPointer;
-        ball->Top+=*yBallVelocityPointer;
+        ball->Left+=xBallVelocityPointer;
+        ball->Top+=yBallVelocityPointer;
 
         //rightPaddle bounce condition
         if (
@@ -125,7 +127,7 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         ((ball->Top+(ball->Height/2))>paddleRight->Top) &&
         ((ball->Top-(ball->Height/2))<(paddleRight->Top+paddleRight->Height)))
 
-                                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
+                                xBallVelocityPointer=xBallVelocityPointer*(-1);
 
         //leftPaddle bounce condition
         if (
@@ -133,15 +135,15 @@ void __fastcall TMainForm::timerBallTimer(TObject *Sender)
         ((ball->Top+(ball->Height/2))>paddleLeft->Top) &&
         ((ball->Top-(ball->Height/2))<(paddleLeft->Top+paddleLeft->Height)))
 
-                                *xBallVelocityPointer=*xBallVelocityPointer*(-1);
+                                xBallVelocityPointer=xBallVelocityPointer*(-1);
 
         //top table band bounce condition
         if (ball->Top<=(table->Top))
-                *yBallVelocityPointer=*yBallVelocityPointer*(-1);
+                yBallVelocityPointer=yBallVelocityPointer*(-1);
 
         //bottom table band bounce condition
         if ((ball->Top+ball->Height)>=((table->Top+table->Height)))
-                *yBallVelocityPointer=*yBallVelocityPointer*(-1);
+                yBallVelocityPointer=yBallVelocityPointer*(-1);
 
         //right paddle loose condition
         if (ball->Left>=(paddleRight->Left+30)){
@@ -201,6 +203,7 @@ void __fastcall TMainForm::resetButtonClick(TObject *Sender)
 void __fastcall TMainForm::settingsButtonClick(TObject *Sender)
 {
         settingsForm->winingScore->Text=winingResult;
+        settingsForm->ballSpeedTrackBar->Position=yBallVelocityPointer;
         settingsForm->ShowModal();
 }
 //---------------------------------------------------------------------------

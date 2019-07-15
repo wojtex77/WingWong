@@ -39,12 +39,15 @@ void TMainForm::resetPaddlesAndBallPositions (){
 void TMainForm::setButtonsConditions (){
 
         //button START
-        timerBall->Enabled=false;
         startButton->Visible=true;
         startButton->Enabled=true;
 
         //result label
         result->Visible=false;
+
+        //ball stoped
+        timerBall->Enabled=false;
+
 }
 
 //---------------------------------------------------------------------------
@@ -101,6 +104,8 @@ void __fastcall TMainForm::FormCreate(TObject *Sender)
         resetPaddlesAndBallPositions();
         setButtonsConditions ();
         winingResult=5;
+
+        Application->MessageBox("Pokonaj swojego przeciwnika i zostañ mistrzem Wing-Wonga! \nDomyœlnie gra toczy siê do 5 wygranych.\nTe i inne parametry mo¿esz zmieniæ w ustawieniach.","Witaj przysz³y Wing-Wongisto!",MB_OK);
 
 
 
