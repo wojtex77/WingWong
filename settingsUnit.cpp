@@ -25,3 +25,9 @@ void __fastcall TsettingsForm::applyButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TsettingsForm::discardButtonClick(TObject *Sender)
+{
+        settingsForm->Close();
+}
+//---------------------------------------------------------------------------
+
